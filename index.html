@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Josefine Kikas – Portfolio</title>
+  <meta name="description" content="Josefine Kikas – Frontendutvecklare. Portfolio, case och kontakt." />
+  
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; font-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; base-uri 'self'; form-action 'self'">
+  <meta name="referrer" content="no-referrer-when-downgrade" />
+  <style>
+    :root{
+      --bg:#0b0c10;
+      --panel:#12141a;
+      --ink:#e6e9ef;
+      --muted:#a9b0bd;
+      --brand:#7c5cff;
+      --accent:#3ddc97;
+      --ring:rgba(124,92,255,.45);
+      --shadow:0 10px 30px rgba(0,0,0,.25);
+      --radius:16px;
+      --max:1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji";
+      background:radial-gradient(1200px 800px at 80% -10%, rgba(124,92,255,.15), transparent 60%),linear-gradient(180deg, #0a0b10, #0b0c10);
+      color:var(--ink);
+    }
+    a{color:var(--ink); text-decoration:none}
+    a.btn{display:inline-block; padding:.8rem 1.1rem; border-radius:12px; border:1px solid rgba(255,255,255,.08); background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)); box-shadow:var(--shadow)}
+    header{
+      position:sticky; top:0; z-index:20; backdrop-filter:saturate(140%) blur(8px);
+      background:rgba(11,12,16,.45); border-bottom:1px solid rgba(255,255,255,.06)
+    }
+    .wrap{max-width:var(--max); margin-inline:auto; padding:0 20px}
+    .bar{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
+    .brand{display:flex; gap:.75rem; align-items:center; font-weight:700}
+    .brand .logo{width:36px; aspect-ratio:1; border-radius:10px; background:conic-gradient(from 220deg at 50% 50%, var(--brand), var(--accent)); box-shadow:0 0 0 6px rgba(124,92,255,.12)}
+    nav ul{display:flex; list-style:none; gap:1rem; padding:0; margin:0}
+    nav a{padding:.45rem .7rem; border-radius:10px}
+    nav a:hover, nav a:focus{outline:none; background:rgba(124,92,255,.16)}
+
+    .hero{padding:64px 0 28px}
+    .hero h1{font-size:clamp(28px, 4vw, 44px); line-height:1.15; margin:.3rem 0}
+    .hero p{color:var(--muted); max-width:720px; margin:0}
+    .cta{display:flex; gap:.7rem; flex-wrap:wrap; margin-top:18px}
+
+    .quick{
+      display:grid; grid-template-columns:repeat(auto-fit, minmax(230px,1fr)); gap:14px; margin:26px 0 6px
+    }
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08);
+      border-radius:var(--radius); padding:16px; box-shadow:var(--shadow); transition:transform .15s ease;
+    }
+    .card:hover{transform:translateY(-3px)}
+    .card h3{margin:.2rem 0 .4rem; font-size:1.05rem}
+    .card p{margin:0; color:var(--muted)}
+
+    .searchbox{margin:30px 0 8px; position:relative}
+    .searchbox input{
+      width:100%; padding:14px 16px; border-radius:14px; border:1.5px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.04); color:var(--ink); outline:2px solid transparent;
+    }
+    .searchbox input:focus{outline:2px solid var(--ring)}
+
+    .projects{display:grid; grid-template-columns:repeat(auto-fill, minmax(260px,1fr)); gap:14px; margin:14px 0 40px}
+    .proj{padding:16px; border-radius:16px; border:1px solid rgba(255,255,255,.08); background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)); box-shadow:var(--shadow)}
+    .proj h4{margin:.2rem 0 .2rem}
+    .tags{display:flex; gap:6px; flex-wrap:wrap; margin-top:6px}
+    .tag{font-size:.75rem; padding:.25rem .5rem; border:1px solid rgba(255,255,255,.15); border-radius:999px; color:var(--muted)}
+
+    section{padding:26px 0}
+    h2{font-size:clamp(22px, 2.4vw, 30px); margin:8px 0 6px}
+
+    footer{border-top:1px solid rgba(255,255,255,.08); padding:28px 0; color:var(--muted)}
+    .muted{color:var(--muted)}
+
+    @media (prefers-reduced-motion:no-preference){
+      .logo{animation:spin 8s linear infinite}
+      @keyframes spin{from{transform:rotate(0)} to{transform:rotate(360deg)}}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap bar">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <a href="#top" class="site">Josefine Kikas</a>
+      </div>
+      <nav aria-label="Huvudmeny">
+        <ul>
+          <li><a href="#om">Om</a></li>
+          <li><a href="#projekt">Projekt</a></li>
+          <li><a href="#cv">CV</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero" id="top">
+      <p class="muted">PORTFOLIO</p>
+      <h1>Frontendutvecklare som bygger snabba, tillgängliga och hållbara webbar.</h1>
+      <p>
+        Frontend-utvecklare med fokus på tillgänglighet, tydlig UX och prestanda. Nedan hittar du utvalda projekt, mitt CV samt hur du kontaktar mig.
+      </p>
+      <div class="cta">
+        <a class="btn" href="#projekt">Se projekt</a>
+        <a class="btn" href="#kontakt">Kontakta mig</a>
+      </div>
+
+      <div class="quick" aria-label="Snabblänkar">
+        <a class="card" href="#om">
+          <h3>Om mig</h3>
+          <p>Vem jag är, vad jag kan och hur jag jobbar.</p>
+        </a>
+        <a class="card" href="#projekt">
+          <h3>Projekt</h3>
+          <p>Case-studier, demos och länkar till kod.</p>
+        </a>
+        <a class="card" href="#cv">
+          <h3>CV</h3>
+          <p>Erfarenhet, utbildning och certifikat.</p>
+        </a>
+        <a class="card" href="#kontakt">
+          <h3>Kontakt</h3>
+          <p>Mail, LinkedIn och andra kanaler.</p>
+        </a>
+      </div>
+    </section>
+
+    <section id="projekt">
+      <h2>Projekt</h2>
+      <p class="muted">Sök bland dina arbeten – skriv t.ex. "React", "designsystem" eller "tillgänglighet".</p>
+      <div class="searchbox">
+        <label class="muted" for="q">Sök</label>
+        <input id="q" type="search" placeholder="Sök projekt… (Ctrl/⌘+K)" autocomplete="off" />
+      </div>
+
+      <div class="projects" id="grid" role="list">
+        
+        <article class="proj" role="listitem" data-title="Designsystem komponentbibliotek" data-tags="react komponenter ui kit accesibility tillgänglighet storybook">
+          <h4>Designsystem & komponentbibliotek</h4>
+          <p class="muted">Skalbart UI-kit i React med Storybook, tokens och dokumentation.</p>
+          <div class="tags"><span class="tag">React</span><span class="tag">Storybook</span><span class="tag">Tokens</span></div>
+          <p><a class="btn" href="#" aria-label="Öppna case – Designsystem">Läs case</a></p>
+        </article>
+
+        <article class="proj" role="listitem" data-title="Prestandaoptimering Lighthouse" data-tags="prestanda performance lighthouse seo optimering bilder caching">
+          <h4>Prestandaoptimering</h4>
+          <p class="muted">Åtgärder för 95–100 i Lighthouse: kodsplit, bildoptimering, caching.</p>
+          <div class="tags"><span class="tag">Lighthouse</span><span class="tag">SEO</span><span class="tag">Web Vitals</span></div>
+          <p><a class="btn" href="#" aria-label="Öppna case – Prestanda">Läs case</a></p>
+        </article>
+
+        <article class="proj" role="listitem" data-title="Tillgänglighet WCAG granskning" data-tags="wcag a11y skärmläsare kontrast navigation w3c">
+          <h4>Tillgänglighetsgranskning</h4>
+          <p class="muted">WCAG 2.2-granskning med åtgärdslista och förbättringar i navigation.</p>
+          <div class="tags"><span class="tag">WCAG</span><span class="tag">A11y</span><span class="tag">UX</span></div>
+          <p><a class="btn" href="#" aria-label="Öppna case – Tillgänglighet">Läs case</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section id="om">
+      <h2>Om mig</h2>
+      <p>Beskriv dig själv kort och konkret. Vad brinner du för? Vilken nytta skapar du? Lägg gärna till en bild (under <code>/img/</code>) och länka in här.</p>
+    </section>
+
+    <section id="cv">
+      <h2>CV</h2>
+      <ul>
+        <li><strong>2024–2025:</strong> Frontend-studier / projekt – React, TypeScript, CSS-arkitektur</li>
+        <li><strong>2022–2024:</strong> Erfarenhet/roll – beskriv ansvar och resultat</li>
+        <li><strong>Utbildning:</strong> Program/kurs – skola, årtal</li>
+        <li><strong>Certifikat:</strong> Lista ev. cert</li>
+      </ul>
+    </section>
+
+    <section id="kontakt">
+      <h2>Kontakt</h2>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/josefine-kikas-b024b4258/" rel="me">Josefine Kikas</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      © <span id="year"></span> Josefine Kikas · Byggd med HTML/CSS/JS · <a class="muted" href="#top">Till toppen ↑</a>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    window.addEventListener('keydown',(e)=>{if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'){e.preventDefault();const el=document.getElementById('q');if(el)el.focus();}});
+    const q=document.getElementById('q');
+    const cards=[...document.querySelectorAll('#grid .proj')];
+    if(q){q.addEventListener('input',()=>{const needle=(q.value||'').toLowerCase();cards.forEach(card=>{const hay=((card.dataset.title||'')+' '+(card.dataset.tags||'')).toLowerCase();card.style.display=hay.includes(needle)?'':'none';});});}
+  </script>
+</body>
+</html>
