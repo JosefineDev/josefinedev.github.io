@@ -5,15 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Josefine Kikas – Portfolio</title>
   <meta name="description" content="Josefine Kikas – Designer & frontendutvecklare. Portfolio, case och kontakt." />
+  <meta property="og:title" content="Josefine Kikas – Portfolio" />
+  <meta property="og:description" content="Designer & frontendutvecklare. Portfolio, case och kontakt." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="img/stall-paradiset-laptop.png" />
+  <meta name="theme-color" content="#7c5cff" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64'%3E%3Crect width='64' height='64' rx='12' fill='%237c5cff'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' font-family='Arial' font-size='34' fill='white'%3EJK%3C/text%3E%3C/svg%3E" />
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; font-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; base-uri 'self'; form-action 'self'">
   <meta name="referrer" content="no-referrer-when-downgrade" />
   <style>
-    :root{--bg:#0b0c10;--panel:#12141a;--ink:#e6e9ef;--muted:#a9b0bd;--brand:#7c5cff;--accent:#3ddc97;--ring:rgba(124,92,255,.45);--shadow:0 10px 30px rgba(0,0,0,.25);--radius:16px;--max:1100px}
+    :root{--bg:#0b0c10;--panel:#12141a;--ink:#e6e9ef;--muted:#a9b0bd;--brand:#7c5cff;--accent:#3ddc97;--warm:#ffb86b;--ring:rgba(124,92,255,.45);--shadow:0 10px 30px rgba(0,0,0,.25);--radius:16px;--max:1100px}
     *{box-sizing:border-box}
     html,body{height:100%}
+    html{scroll-behavior:smooth}
     body{margin:0;font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,"Noto Sans","Apple Color Emoji","Segoe UI Emoji";background:linear-gradient(180deg,#0a0b10,#0b0c10);color:var(--ink);position:relative}
     body::before{content:"";position:fixed;inset:-20%;background:radial-gradient(700px 420px at 80% -10%, rgba(124,92,255,.22), transparent 60%),conic-gradient(from 0deg at 70% 20%, rgba(124,92,255,.12), rgba(61,220,151,.12), transparent 55%);filter:blur(40px);opacity:.45;animation:glowMove 28s linear infinite;pointer-events:none;z-index:0}
     @keyframes glowMove{0%{transform:rotate(0)}50%{transform:rotate(180deg)}100%{transform:rotate(360deg)}}
+    #progress{position:fixed;top:0;left:0;height:3px;width:100%;transform:scaleX(0);transform-origin:left;background:linear-gradient(90deg,var(--brand),var(--warm),var(--accent));z-index:10}
     :where(a){text-underline-offset:.18em;text-decoration-thickness:.08em;color:var(--ink);text-decoration:none}
     ::selection{background:rgba(61,220,151,.35)}
     a.btn{position:relative;overflow:hidden;display:inline-block;padding:.8rem 1.1rem;border-radius:12px;border:1px solid rgba(255,255,255,.08);background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));box-shadow:var(--shadow);transition:transform .15s ease,box-shadow .15s ease,background .15s ease}
@@ -34,6 +42,7 @@
     .logo{width:36px;aspect-ratio:1;border-radius:10px;background:conic-gradient(from 220deg at 50% 50%,var(--brand),var(--accent));box-shadow:0 0 0 6px rgba(124,92,255,.12)}
     nav ul{display:flex;list-style:none;gap:1rem;padding:0;margin:0}
     nav a{padding:.45rem .7rem;border-radius:10px}
+    nav a.active{background:rgba(124,92,255,.18);box-shadow:0 0 0 2px rgba(124,92,255,.18) inset}
     nav a:hover,nav a:focus{outline:none;background:rgba(124,92,255,.16)}
     .hero{padding:84px 0 36px}
     .hero h1{font-size:clamp(28px,4vw,44px);line-height:1.15;margin:.3rem 0;position:relative;display:inline-block;overflow:hidden}
@@ -42,31 +51,34 @@
     .hero p{color:var(--muted);max-width:720px;margin:0}
     .cta{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:18px}
     .quick{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin:26px 0 6px}
-    .card{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow);transition:transform .15s ease}
-    .card:hover{transform:translateY(-3px)}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow);transition:transform .18s ease,filter .18s ease}
+    .card:hover{transform:translateY(-3px) scale(1.01);filter:saturate(110%)}
     .card h3{margin:.2rem 0 .4rem;font-size:1.05rem}
     .card p{margin:0;color:var(--muted)}
     .searchbox{margin:30px 0 8px;position:relative}
     .searchbox input{width:100%;padding:14px 16px;border-radius:14px;border:1.5px solid rgba(255,255,255,.10);background:rgba(255,255,255,.04);color:var(--ink);outline:2px solid transparent}
     .searchbox input:focus{outline:2px solid var(--ring)}
     .projects{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin:14px 0 40px}
-    .proj{padding:16px;border-radius:16px;border:1px solid rgba(255,255,255,.08);background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));box-shadow:var(--shadow)}
+    .proj{padding:16px;border-radius:16px;border:1px solid rgba(255,255,255,.08);background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));box-shadow:var(--shadow);transition:transform .18s ease,filter .18s ease}
+    .proj:hover{transform:translateY(-3px) scale(1.01);filter:saturate(108%)}
     .proj h4{margin:.2rem 0 .2rem}
     .tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
     .tag{font-size:.75rem;padding:.25rem .5rem;border:1px solid rgba(255,255,255,.15);border-radius:999px;color:var(--muted)}
-    .reveal{opacity:0;transform:translateY(10px) scale(.985);filter:saturate(85%);transition:transform .55s ease,opacity .55s ease,filter .6s ease}
-    .reveal.in{opacity:1;transform:translateY(0) scale(1);filter:saturate(100%)}
-    section{padding:26px 0}
+    section{padding:26px 0;scroll-margin-top:84px}
     h2{font-size:clamp(22px,2.4vw,30px);margin:8px 0 6px}
     footer{border-top:1px solid rgba(255,255,255,.08);padding:28px 0;color:var(--muted)}
     .muted{color:var(--muted)}
+    .reveal{opacity:0;transform:translateY(10px) scale(.985);filter:saturate(85%);transition:transform .55s ease,opacity .55s ease,filter .6s ease}
+    .reveal.in{opacity:1;transform:translateY(0) scale(1);filter:saturate(100%)}
     @media (prefers-reduced-motion:no-preference){.logo{animation:spin 8s linear infinite}@keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}}
+    @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hero h1::after{animation:none}body::before{animation:none}.btn:hover::after{animation:none}.reveal{opacity:1;transform:none;filter:none}}
     @media (min-width:900px){.hero{padding:84px 0 36px}}
     @media (prefers-contrast:more){nav a.active{outline:2px solid var(--accent)}}
     @media print{body{background:#fff;color:#000}header,.cta,.quick,#kontakt .muted,footer{display:none}a{color:#000;text-decoration:underline}}
   </style>
 </head>
 <body>
+  <div id="progress"></div>
   <a class="skip" href="#main">Hoppa till innehåll</a>
   <header>
     <div class="wrap bar">
@@ -266,13 +278,16 @@
   </footer>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('year').textContent=new Date().getFullYear();
     window.addEventListener('keydown',(e)=>{if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'){e.preventDefault();const el=document.getElementById('q');if(el)el.focus();}});
-    const q=document.getElementById('q'); const cards=[...document.querySelectorAll('#grid .proj')];
+    const q=document.getElementById('q');const cards=[...document.querySelectorAll('#grid .proj')];
     if(q){q.addEventListener('input',()=>{const needle=(q.value||'').toLowerCase();cards.forEach(card=>{const hay=((card.dataset.title||'')+' '+(card.dataset.tags||'')).toLowerCase();card.style.display=hay.includes(needle)?'':'none';});});}
-    window.addEventListener('scroll',()=>{const y=window.scrollY*0.08;document.querySelector('header').style.setProperty('--parallax', y+'px');});
-    const toReveal=[...document.querySelectorAll('.proj,.card')];
-    toReveal.forEach(el=>el.classList.add('reveal'));
+    window.addEventListener('scroll',()=>{const y=window.scrollY*0.08;document.querySelector('header').style.setProperty('--parallax',y+'px');const h=document.documentElement;const sc=h.scrollTop||document.body.scrollTop;const max=(h.scrollHeight-h.clientHeight)||1;const p=sc/max;document.getElementById('progress').style.transform='scaleX('+p+')';});
+    const sections=[...document.querySelectorAll('main section[id]')];const navLinks=[...document.querySelectorAll('nav a[href^="#"]')];
+    const navMap=new Map(navLinks.map(a=>[a.getAttribute('href').slice(1),a]));
+    const secObs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){const id=e.target.id;navLinks.forEach(a=>a.classList.remove('active'));const link=navMap.get(id);if(link)link.classList.add('active');}})},{rootMargin:"-40% 0px -55% 0px",threshold:[0,1]});
+    sections.forEach(s=>secObs.observe(s));
+    const toReveal=[...document.querySelectorAll('.proj,.card')];toReveal.forEach(el=>el.classList.add('reveal'));
     const io=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.18});
     toReveal.forEach(el=>io.observe(el));
   </script>
