@@ -5,12 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Josefine Kikas – Portfolio</title>
   <meta name="description" content="Josefine Kikas – Frontendutvecklare. Portfolio, case och kontakt." />
+  
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; font-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; base-uri 'self'; form-action 'self'">
   <meta name="referrer" content="no-referrer-when-downgrade" />
-  <meta property="og:title" content="Josefine Kikas – Portfolio" />
-  <meta property="og:description" content="Frontendutvecklare med fokus på tillgänglighet och prestanda." />
-  <meta property="og:type" content="website" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Josefine Kikas","jobTitle":"Frontendutvecklare","url":"","sameAs":[]}</script>
   <style>
     :root{
       --bg:#0b0c10;
@@ -38,13 +35,12 @@
       background:rgba(11,12,16,.45); border-bottom:1px solid rgba(255,255,255,.06)
     }
     .wrap{max-width:var(--max); margin-inline:auto; padding:0 20px}
-    .bar{display:flex; align-items:center; justify-content:space-between; gap:.6rem; padding:14px 0}
+    .bar{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
     .brand{display:flex; gap:.75rem; align-items:center; font-weight:700}
     .brand .logo{width:36px; aspect-ratio:1; border-radius:10px; background:conic-gradient(from 220deg at 50% 50%, var(--brand), var(--accent)); box-shadow:0 0 0 6px rgba(124,92,255,.12)}
     nav ul{display:flex; list-style:none; gap:1rem; padding:0; margin:0}
     nav a{padding:.45rem .7rem; border-radius:10px}
     nav a:hover, nav a:focus{outline:none; background:rgba(124,92,255,.16)}
-    nav a.active{background:rgba(61,220,151,.18)}
 
     .hero{padding:64px 0 28px}
     .hero h1{font-size:clamp(28px, 4vw, 44px); line-height:1.15; margin:.3rem 0}
@@ -85,12 +81,21 @@
       .logo{animation:spin 8s linear infinite}
       @keyframes spin{from{transform:rotate(0)} to{transform:rotate(360deg)}}
     }
-
-    :root.light{--bg:#f6f7fb;--panel:#ffffff;--ink:#171923;--muted:#525f7a;--brand:#5b42ff;--accent:#2bbf7b;--ring:rgba(91,66,255,.45);--shadow:0 8px 24px rgba(0,0,0,.08)}
-    body.light{background:linear-gradient(180deg,#f7f9ff,#f6f7fb)}
-  </style>
+  :where(a){text-underline-offset:.18em;text-decoration-thickness:.08em}
+:focus-visible{outline:3px solid var(--ring);outline-offset:2px;border-radius:12px}
+.btn{transition:transform .15s ease,box-shadow .15s ease,background .15s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn:active{transform:translateY(0)}
+::selection{background:rgba(61,220,151,.35)}
+.skip{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+.skip:focus{left:12px;top:12px;width:auto;height:auto;padding:.6rem .9rem;background:var(--panel);border:1px solid rgba(255,255,255,.2);border-radius:12px;box-shadow:var(--shadow);z-index:50}
+@media (min-width:900px){.hero{padding:84px 0 36px}}
+@media (prefers-contrast:more){nav a.active{outline:2px solid var(--accent)}}
+@media print{body{background:#fff;color:#000}header,.cta,.quick,#kontakt .muted,footer{display:none}a{color:#000;text-decoration:underline}}
+</style>
 </head>
 <body>
+  <a class="skip" href="#main">Hoppa till innehåll</a>
   <header>
     <div class="wrap bar">
       <div class="brand">
@@ -105,17 +110,14 @@
           <li><a href="#kontakt">Kontakt</a></li>
         </ul>
       </nav>
-      <button id="themeToggle" class="btn" aria-pressed="false">Tema: Mörkt</button>
     </div>
   </header>
 
-  <main class="wrap">
+  <main id="main" class="wrap">
     <section class="hero" id="top">
       <p class="muted">PORTFOLIO</p>
-      <h1>.SKRIV HÄR</h1>
-      <p>
-        Frontend-utvecklare med fokus på tillgänglighet, tydlig UX och prestanda. Nedan hittar du utvalda projekt, mitt CV samt hur du kontaktar mig.
-      </p>
+      <h1>Frontendutvecklare – webb, UX‑design, marknadsföring &amp; kommunikation.</h1>
+      <p>Filosofie kandidatexamen i informatik (Högskolan Väst). Jag bygger tillgängliga, snabba gränssnitt och omsätter insikter från GA4 och Google Ads till konkret nytta – från idé till lansering.</p>
       <div class="cta">
         <a class="btn" href="#projekt">Se projekt</a>
         <a class="btn" href="#kontakt">Kontakta mig</a>
@@ -150,59 +152,60 @@
       </div>
 
       <div class="projects" id="grid" role="list">
-        <article class="proj" role="listitem" data-title="Designsystem komponentbibliotek" data-tags="react komponenter ui kit tillgänglighet storybook tokens">
+        
+        <article class="proj" role="listitem" data-title="Designsystem komponentbibliotek" data-tags="react komponenter ui kit accesibility tillgänglighet storybook">
           <h4>Designsystem & komponentbibliotek</h4>
-          <p class="muted">Skalbart UI-kit i React med Storybook, designtokens och dokumentation.</p>
+          <p class="muted">Skalbart UI-kit i React med Storybook, tokens och dokumentation.</p>
           <div class="tags"><span class="tag">React</span><span class="tag">Storybook</span><span class="tag">Tokens</span></div>
-          <p><a class="btn" href="#">Läs case</a></p>
+          <p><a class="btn" href="#" aria-label="Öppna case – Designsystem">Läs case</a></p>
         </article>
-        <article class="proj" role="listitem" data-title="Prestandaoptimering Lighthouse" data-tags="prestanda lighthouse seo optimering bilder caching web vitals">
+
+        <article class="proj" role="listitem" data-title="Prestandaoptimering Lighthouse" data-tags="prestanda performance lighthouse seo optimering bilder caching">
           <h4>Prestandaoptimering</h4>
-          <p class="muted">95–100 i Lighthouse: kodsplit, bildoptimering, caching och mätning.</p>
+          <p class="muted">Åtgärder för 95–100 i Lighthouse: kodsplit, bildoptimering, caching.</p>
           <div class="tags"><span class="tag">Lighthouse</span><span class="tag">SEO</span><span class="tag">Web Vitals</span></div>
-          <p><a class="btn" href="#">Läs case</a></p>
+          <p><a class="btn" href="#" aria-label="Öppna case – Prestanda">Läs case</a></p>
         </article>
-        <article class="proj" role="listitem" data-title="Tillgänglighet WCAG granskning" data-tags="wcag a11y ux kontrast navigation w3c">
+
+        <article class="proj" role="listitem" data-title="Tillgänglighet WCAG granskning" data-tags="wcag a11y skärmläsare kontrast navigation w3c">
           <h4>Tillgänglighetsgranskning</h4>
-          <p class="muted">WCAG 2.2-genomgång med åtgärdslista, semantik och förbättrad navigation.</p>
+          <p class="muted">WCAG 2.2-granskning med åtgärdslista och förbättringar i navigation.</p>
           <div class="tags"><span class="tag">WCAG</span><span class="tag">A11y</span><span class="tag">UX</span></div>
-          <p><a class="btn" href="#">Läs case</a></p>
-        </article>
-        <article class="proj" role="listitem" data-title="Portfolio generator statisk sajt" data-tags="html css javascript github pages seo">
-          <h4>Portfolio-generator</h4>
-          <p class="muted">Statisk sajt med CI-deploy till GitHub Pages och grundläggande SEO.</p>
-          <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span></div>
-          <p><a class="btn" href="#">Läs case</a></p>
-        </article>
-        <article class="proj" role="listitem" data-title="Formulär utan backend serverless" data-tags="serverless vercel cloudflare forms säkerhet spam">
-          <h4>Formulär utan egen backend</h4>
-          <p class="muted">Kontaktflöde via serverless och validering utan att exponera e-post.</p>
-          <div class="tags"><span class="tag">Serverless</span><span class="tag">Validering</span><span class="tag">Säkerhet</span></div>
-          <p><a class="btn" href="#">Läs case</a></p>
+          <p><a class="btn" href="#" aria-label="Öppna case – Tillgänglighet">Läs case</a></p>
         </article>
       </div>
     </section>
 
     <section id="om">
       <h2>Om mig</h2>
-      <p>Jag heter Josefine Kikas och bygger snabba, tillgängliga och användarvänliga gränssnitt. Jag trivs bäst när design och kod möts – med fokus på tydlig information, god läsbarhet och mätbar prestanda.</p>
+      <p>Jag heter Josefine Kikas och har en filosofie kandidatexamen i informatik från Högskolan Väst. Jag vill arbeta med webb, UX‑design, marknadsföring och kommunikation och trivs i gränslandet där teknik, strategi och form möts.</p>
+      <p>Under min tid på Högskolan Väst har jag fördjupat mig i design för digitala plattformar och hur man skapar och anpassar medieprodukter för olika målgrupper och kanaler. Praktiska projekt har varit centrala, vilket har hjälpt mig att utveckla mina färdigheter och bygga arbeten som nu utgör kärnan i min portfolio.</p>
+      <p>I arbetet fokuserar jag på tydlig struktur, tillgänglighet (WCAG‑tänk) och prestanda. Jag använder webbanalys (GA4) och Google Ads för att testa, mäta och förbättra – så att designbeslut kan kopplas till resultat.</p>
+      <h3>Kompetenser i korthet</h3>
+      <ul>
+        <li><strong>CMS:</strong> WordPress</li>
+        <li><strong>Webbdesign &amp; kod:</strong> HTML, CSS (responsiv layout, komponenttänk)</li>
+        <li><strong>UX‑design:</strong> wireframes, prototyper, användarflöden, grundläggande tillgänglighet (WCAG)</li>
+        <li><strong>Marknadsföring &amp; kommunikation:</strong> sociala medier, PR, Google Ads (planering, annonsering, grundläggande optimering)</li>
+        <li><strong>Grafisk produktion:</strong> Adobe Creative Cloud (bild, layout, video, ljud)</li>
+        <li><strong>Mediahantverk:</strong> foto, film, ljudupptagning och redigering</li>
+        <li><strong>Webbanalys:</strong> GA4 (mål, händelser, rapporter)</li>
+      </ul>
     </section>
 
     <section id="cv">
       <h2>CV</h2>
       <ul>
-        <li><strong>2025:</strong> Frontend-projekt – fokus på tillgänglighet, prestanda och ren CSS-arkitektur</li>
-        <li><strong>2024:</strong> Fördjupning i React och komponenttänk</li>
-        <li><strong>Utbildning:</strong> Media informatik (kandidatexamen)</li>
+        <li><strong>2024–2025:</strong> Frontend-studier / projekt – React, TypeScript, CSS-arkitektur</li>
+        <li><strong>2022–2024:</strong> Erfarenhet/roll – beskriv ansvar och resultat</li>
+        <li><strong>Utbildning:</strong> Program/kurs – skola, årtal</li>
+        <li><strong>Certifikat:</strong> Lista ev. cert</li>
       </ul>
-      <p><a class="btn" href="cv.pdf" download>Hämta CV (PDF)</a></p>
     </section>
 
     <section id="kontakt">
       <h2>Kontakt</h2>
-      <p>Vill du komma i kontakt?</p>
-      <p id="emailWrapper"><button id="revealEmail" class="btn" data-user="josefine.kikas" data-domain="exempel.se">Visa e-post</button></p>
-      <p class="muted">LinkedIn: <a href="#" rel="me">Lägg till länk</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/josefine-kikas-b024b4258/" rel="me">Josefine Kikas</a></p>
     </section>
   </main>
 
@@ -214,11 +217,10 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-    window.addEventListener('keydown',(e)=>{if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'){e.preventDefault();const el=document.getElementById('q');el&&el.focus();}});
-    const q=document.getElementById('q');const cards=[...document.querySelectorAll('#grid .proj')];const norm=s=>(s||'').toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu,'');if(q){q.addEventListener('input',()=>{const needle=norm(q.value);cards.forEach(card=>{const hay=norm(card.dataset.title+' '+card.dataset.tags);card.style.display=hay.includes(needle)?'':'none';});});}
-    const themeToggle=document.getElementById('themeToggle');const pref=localStorage.getItem('theme')||'';const prefersLight=window.matchMedia('(prefers-color-scheme: light)').matches;function setTheme(mode){document.documentElement.classList.toggle('light',mode==='light');if(themeToggle){themeToggle.setAttribute('aria-pressed',mode==='light');themeToggle.textContent=mode==='light'?'Tema: Ljust':'Tema: Mörkt';}localStorage.setItem('theme',mode);}setTheme(pref?pref:(prefersLight?'light':'dark'));if(themeToggle){themeToggle.addEventListener('click',()=>{const next=document.documentElement.classList.contains('light')?'dark':'light';setTheme(next);});}
-    const reveal=document.getElementById('revealEmail');if(reveal){reveal.addEventListener('click',()=>{const u=reveal.dataset.user||'kontakt';const d=reveal.dataset.domain||'exempel.se';const addr=u+'@'+d;const wrap=document.getElementById('emailWrapper');if(wrap){wrap.innerHTML='<a href="mailto:'+addr+'">'+addr+'</a>';}});}
-    const sections=[...document.querySelectorAll('main section[id]')];const navLinks=[...document.querySelectorAll('nav a[href^="#"]')];const byId={};navLinks.forEach(a=>byId[a.getAttribute('href').slice(1)]=a);const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){const id=e.target.id;navLinks.forEach(a=>a.classList.toggle('active',a===byId[id]));}})},{rootMargin:'-40% 0px -55% 0px',threshold:0});sections.forEach(s=>obs.observe(s));
+    window.addEventListener('keydown',(e)=>{if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'){e.preventDefault();const el=document.getElementById('q');if(el)el.focus();}});
+    const q=document.getElementById('q');
+    const cards=[...document.querySelectorAll('#grid .proj')];
+    if(q){q.addEventListener('input',()=>{const needle=(q.value||'').toLowerCase();cards.forEach(card=>{const hay=((card.dataset.title||'')+' '+(card.dataset.tags||'')).toLowerCase();card.style.display=hay.includes(needle)?'':'none';});});}
   </script>
 </body>
 </html>
